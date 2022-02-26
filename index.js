@@ -45,7 +45,7 @@ const lang = core.getInput("LANG") || "en";
 
 
 
-  async function writeToFile(file_part,translatedText) {
+  async function writeToFile(file_part,translatedText,readmeAST) {
     await Promise.all(translatedText);
     writeFileSync(
       join(mainDir, `${file_part}.${lang}.md`),
@@ -89,7 +89,7 @@ const lang = core.getInput("LANG") || "en";
         const translatedText = originalText.map(async (text) => {
           return (await $(text, { to: lang })).text;
         });
-        await writeToFile(file_part,translatedText);
+        await writeToFile(file_part,translatedText,readmeAST);
         await commitChanges(file_part,lang);
         console.log("commit",file_part,lang);
       }
