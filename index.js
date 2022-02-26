@@ -40,6 +40,8 @@ const recFindByExt=(base,files,result) => {
 
 const mainDir = ".";
 let FILES = recFindByExt(mainDir);
+console.log("FILES");
+console.log(FILES);
 const lang = core.getInput("LANG") || "en";
 //let README = readdirSync(mainDir).includes("readme.md")? "readme.md": "README.md";
 
