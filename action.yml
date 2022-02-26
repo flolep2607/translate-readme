@@ -1,12 +1,12 @@
-name: Translate Readme Action
-author: Ephraim Atta-Duncan
-description: Translate the Readme to another language
+name: Translate all Markdown Action
+author: Flolep2607
+description: Translate all Markdown to another language
 
 inputs:
   LANG:
     description: 'The Language you want to translate to'
     required: false
-    default: 'zh-CN'
+    default: 'en'
 
 runs:
   using: 'node12'
@@ -14,4 +14,4 @@ runs:
 
 branding:
   icon: book-open
-  color: black
+  color: green
