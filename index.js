@@ -1,7 +1,7 @@
 const { readFileSync, writeFileSync, readdirSync, statSync } = require("fs");
 const { join } = require("path");
 const core = require("@actions/core");
-const $ = require("@k3rn31p4nic/google-translate-api");
+const dollar_sign = require("@k3rn31p4nic/google-translate-api");
 const unified = require("unified");
 const parse = require("remark-parse");
 const stringify = require("remark-stringify");
@@ -89,7 +89,7 @@ const lang = core.getInput("LANG") || "en";
         });
 
         const translatedText = originalText.map(async (text) => {
-          return (await $(text, { to: lang })).text;
+          return (await dollar_sign(text, { to: lang })).text;
         });
         await writeToFile(file_part,translatedText,readmeAST);
         await commitChanges(file_part,lang);
